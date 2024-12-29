@@ -36,10 +36,9 @@ getgenv().ms = Value
 local args = {
     [1] = {
         [1] = "Rebirths"
-    }
 }
 while getgenv().ms == true do
-wait(0.1)
+wait(1)
 game:GetService("ReplicatedStorage"):WaitForChild("Event"):WaitForChild("ToServer"):FireServer(unpack(args))
 end
    end,
