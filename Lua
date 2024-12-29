@@ -6,8 +6,8 @@ local Window = Rayfield:CreateWindow({
    LoadingSubtitle = "Khan",
    ConfigurationSaving = {
       Enabled = true,
-      FolderName =
-      FileName =
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Hub"
    },
    Discord = {
       Enabled = false,
