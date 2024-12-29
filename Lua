@@ -27,18 +27,18 @@ local Window = Rayfield:CreateWindow({
 })
 local Tab = Window:CreateTab("Autofarming Stuff", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Auto")
-getgenv().ms = true
+getgenv().ToServer = true
 local Toggle = Tab:CreateToggle({
    Name = "Auto Rebirths",
    CurrentValue = false,
    Callback = function(Value)
-getgenv().ms = Value
+getgenv().ToServer = Value
 local args = {
     [1] = {
         [1] = "Rebirths"
     }
 }
-while getgenv().ms == true do
+while getgenv().ToServer == true do
 wait(1)
 game:GetService("ReplicatedStorage"):WaitForChild("Event"):WaitForChild("ToServer"):FireServer(unpack(args))
 end
