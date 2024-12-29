@@ -34,9 +34,7 @@ local Toggle = Tab:CreateToggle({
    Callback = function(Value)
 getgenv().ToServer = Value
 local args = {
-    [1] = {
-        [1] = "Rebirths"
-    }
+    [1] = "Rebirths"
 }
 while getgenv().ToServer == true do
 wait(1)
