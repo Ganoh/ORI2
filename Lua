@@ -1,0 +1,52 @@
+getgenv().SecureMode = true
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Rayfield:CreateWindow({
+   Name = "Omega Rune Incremental 2",
+   LoadingTitle = "",
+   LoadingSubtitle = "Khan",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName =
+      FileName =
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "", 
+      RememberJoins = true 
+   },
+   KeySystem = false, 
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key", 
+      SaveKey = true, 
+      GrabKeyFromSite = false, 
+      Key = {"Hello"} 
+   }
+})
+local Tab = Window:CreateTab("Autofarming Stuff", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("Auto")
+getgenv().ms = true
+local Toggle = Tab:CreateToggle({
+   Name = "Auto Rebirths",
+   CurrentValue = false,
+   Callback = function(Value)
+getgenv().ms = Value
+local args = {
+    [1] = {
+        [1] = "Rebirths"
+    }
+}
+while getgenv().ms == true do
+wait(0.1)
+game:GetService("ReplicatedStorage"):WaitForChild("Event"):WaitForChild("ToServer"):FireServer(unpack(args))
+end
+   end,
+})
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(50)
+vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
