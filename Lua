@@ -36,6 +36,7 @@ getgenv().ms = Value
 local args = {
     [1] = {
         [1] = "Rebirths"
+    }
 }
 while getgenv().ms == true do
 wait(1)
